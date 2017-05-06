@@ -6,8 +6,9 @@ var exphbs = require("express-handlebars");
 // Import routes from controller to give server access
 var routes = require("./controllers/burgers_controller.js");
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
+// Express
 var app = express();
 
 // Serve static content for the app from the public directory
