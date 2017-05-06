@@ -41,7 +41,7 @@ var orm = {
 		queryString += " (burger_name, devoured)";
 		queryString += " VALUES ('";
 		queryString += vals;
-		queryString += ", false');";
+		queryString += "', false);";
 
 		connection.query(queryString, vals, function(err, result) {
 			if (err) {
