@@ -1,35 +1,56 @@
 <div class="container">
 
-<div class="row">
-	<form method="POST" action="/">
-		<input class="form-control" type="text" placeholder="Enter a burger" name="burgerName">
-		<button class="btn btn-default" type="submit">Submit</button>
-	</form>
-</div>
-<div class="row">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Number</th>
-				<th>Name</th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each burgers}}
-			{{#unless this.devoured}}
-			<tr>
-				<td>{{this.id}}</td>
-				<td>{{this.burger_name}}</td>
-				<form action="/{{this.id}}?_method=PUT" method="POST">
-					<input type="hidden" name="devoured" value="true">
-					<button class="btn btn-default" type="submit">Eat</burger>
-				</form>
-			</tr>
-			{{/unless}}
-			{{/each}}
-		</tbody>
-	</table>
-
-</div>
+	<div class="row">
+		<form method="POST" action="/">
+			<input class="form-control" type="text" placeholder="Enter a burger" name="burgerName">
+			<button class="btn btn-default" type="submit">Submit</button>
+		</form>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each burgers}}
+				{{#unless this.devoured}}
+				<tr>
+					<td>{{this.id}}</td>
+					<td>{{this.burger_name}}</td>
+					<td>
+						<form action="/{{this.id}}?_method=PUT" method="POST">
+							<input type="hidden" name="devoured" value="true">
+							<button class="btn btn-default" type="submit">Eat</burger>
+						</form>
+					</td>
+				</tr>
+				{{/unless}}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each burgers}}
+				{{#if this.devoured}}
+				<tr>
+					<td>{{this.id}}</td>
+					<td>{{this.burger_name}}</td>
+				</tr>
+				{{/if}}
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 
 </div>
