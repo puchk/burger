@@ -1,0 +1,9 @@
+body {
+	background-image: url(../../assets/img/background.jpg);
+	background-color:rgba(255,0,0,0.5);
+}
+
+h1, h2, table {
+	background: white;
+	opacity: .9;
+}
